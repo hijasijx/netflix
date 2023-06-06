@@ -3,12 +3,13 @@ import axios from "../hooks/axios";
 import { useLocation } from "react-router";
 import { useNavigate } from "react-router";
 import { getAuth } from "@firebase/auth";
-import { Header } from "../components";
+import { Footer, Header } from "../components";
 import * as ROUTES from "../constans/routes";
 import Logo from "../logo.svg";
 import requests from "../hooks/request";
 import "../components/baner/baner.css";
 import Row from "../components/row/row";
+import { FooterContainer } from "./footer";
 
 export function BrowseContainer() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -57,7 +58,6 @@ export function BrowseContainer() {
             />
             <Header.Profile>
               <Header.Picture
-                onClick={() => navigate(ROUTES.Profile)}
                 src={userImage}
               />
               <Header.Dropdown>
@@ -103,6 +103,7 @@ export function BrowseContainer() {
       <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
       <Row title="Horror Movies" fetchUrl={requests.fetchHorroMovies} />
       <Row title="Romance Movies" fetchUrl={requests.fetchRomanticMovies} />
+      <FooterContainer />
     </div>
   );
 }

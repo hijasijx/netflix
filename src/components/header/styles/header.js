@@ -131,9 +131,9 @@ export const Dropdown = styled.div`
   position: absolute;
   background-color: black;
   padding: 10px;
-  width: 100px;
-  top: 32px;
-  right: 10px;
+  width: 90px;
+  top: 0px;
+  right: -50px;
 
   ${Group}:last-of-type ${Link} {
     cursor: pointer;
@@ -177,7 +177,7 @@ export const Profile = styled.div`
   }
 
   &:hover > ${Dropdown} {
-    display: flex;
+    display: block;
     flex-direction: column;
   }
 `;
